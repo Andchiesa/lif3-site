@@ -422,7 +422,7 @@ function App() {
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
             Entre em Contato
-            <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto`}>
+            <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-24 max-w-3xl mx-auto`}>
               Conheça a nossa inteligência artificial que responde você em tempo real
               </p>
           </h2>
