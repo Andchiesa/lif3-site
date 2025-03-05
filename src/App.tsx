@@ -15,6 +15,7 @@ import {
   Sun,
   Moon
 } from 'lucide-react';
+import { ServiceModal } from './components/ServiceModal';
 
 // Adicione este tipo para o formulário
 type FormData = {
@@ -23,6 +24,15 @@ type FormData = {
   email: string;
   subject: 'Serviços' | 'Indica+' | 'Pacotes' | 'Outros';
   message: string;
+};
+
+// Adicione este tipo para os serviços
+type Service = {
+  title: string;
+  icon: React.ReactNode;
+  description: string;
+  details: string;
+  benefits: string[];
 };
 
 function App() {
@@ -37,6 +47,8 @@ function App() {
   });
   const [showPopup, setShowPopup] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,7 +90,16 @@ function App() {
   const theme = getThemeClasses();
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
+    const idMap: Record<string, string> = {
+      'services': 'servicos',
+      'packages': 'pacotes',
+      'contact': 'contato',
+      'indica': 'indica'
+    };
+    
+    const targetId = idMap[sectionId] || sectionId;
+    const element = document.getElementById(targetId);
+    
     if (element) {
       const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
@@ -135,36 +156,85 @@ function App() {
     }, 7000);
   };
 
-  const services = [
+  // Defina os serviços com detalhes completos
+  const services: Service[] = [
     {
-      icon: <Search className="w-12 h-12 text-[#D4AF37]" />,
-      title: "SEO e Otimização",
-      description: "Apareça no topo das buscas do Google e aumente sua visibilidade online."
+      title: "Design Gráfico",
+      icon: <PenTool className="h-6 w-6 text-amber-500" />,
+      description: "Criação de identidade visual e materiais gráficos para sua marca.",
+      details: "Nosso serviço de design gráfico abrange desde a criação de logotipos e identidade visual completa até materiais impressos e digitais. Trabalhamos com as últimas tendências e ferramentas do mercado para entregar designs únicos e impactantes.",
+      benefits: [
+        "Identidade visual consistente",
+        "Designs exclusivos e personalizados",
+        "Arquivos em alta resolução para diversos usos",
+        "Revisões ilimitadas até aprovação final",
+        "Entrega de manual de marca completo"
+      ]
     },
     {
-      icon: <Share2 className="w-12 h-12 text-[#D4AF37]" />,
-      title: "Gerenciamento de Redes Sociais",
-      description: "Estratégias personalizadas para alcançar e engajar seu público-alvo."
+      title: "Marketing de Conteúdo",
+      icon: <BookOpen className="h-6 w-6 text-amber-500" />,
+      description: "Estratégias de conteúdo que engajam e convertem seu público-alvo.",
+      details: "Desenvolvemos estratégias completas de marketing de conteúdo, desde o planejamento editorial até a criação e distribuição. Nosso objetivo é gerar valor para sua audiência enquanto fortalecemos sua autoridade no mercado.",
+      benefits: [
+        "Aumento de tráfego orgânico",
+        "Conteúdo otimizado para SEO",
+        "Maior engajamento nas redes sociais",
+        "Construção de autoridade no mercado",
+        "Relatórios mensais de performance"
+      ]
     },
     {
-      icon: <PenTool className="w-12 h-12 text-[#D4AF37]" />,
-      title: "Criação de Conteúdo",
-      description: "Conteúdo relevante e envolvente que converte em resultados."
+      title: "Educação Digital",
+      icon: <GraduationCap className="h-6 w-6 text-amber-500" />,
+      description: "Treinamentos e workshops para capacitar sua equipe no ambiente digital.",
+      details: "Oferecemos programas de capacitação personalizados para equipes de todos os tamanhos. Nossos treinamentos cobrem desde fundamentos de marketing digital até técnicas avançadas de análise de dados e estratégias de crescimento.",
+      benefits: [
+        "Metodologia prática e aplicável",
+        "Material didático exclusivo",
+        "Exercícios baseados em casos reais",
+        "Certificado de conclusão",
+        "Suporte pós-treinamento"
+      ]
     },
     {
-      icon: <BookOpen className="w-12 h-12 text-[#D4AF37]" />,
-      title: "Produção de E-books",
-      description: "Materiais educativos que estabelecem sua autoridade no mercado."
+      title: "Publicidade Online",
+      icon: <Megaphone className="h-6 w-6 text-amber-500" />,
+      description: "Campanhas de anúncios otimizadas para maximizar seu ROI.",
+      details: "Gerenciamos campanhas publicitárias em diversas plataformas como Google Ads, Facebook Ads, Instagram e LinkedIn. Utilizamos técnicas avançadas de segmentação e otimização para garantir o melhor retorno sobre investimento.",
+      benefits: [
+        "Segmentação precisa de público",
+        "Otimização contínua de campanhas",
+        "Monitoramento em tempo real",
+        "Relatórios detalhados de performance",
+        "Estratégias de remarketing"
+      ]
     },
     {
-      icon: <GraduationCap className="w-12 h-12 text-[#D4AF37]" />,
-      title: "Cursos Online",
-      description: "Transforme seu conhecimento em produtos digitais lucrativos."
+      title: "Gestão de Redes Sociais",
+      icon: <Share2 className="h-6 w-6 text-amber-500" />,
+      description: "Administração completa das suas redes sociais com estratégia e criatividade.",
+      details: "Nossa equipe cuida de todo o processo de gestão das suas redes sociais, desde o planejamento estratégico até a criação de conteúdo, publicação e interação com seguidores. Trabalhamos para construir uma presença digital forte e engajada.",
+      benefits: [
+        "Calendário editorial personalizado",
+        "Criação de conteúdo original",
+        "Gerenciamento de comunidade",
+        "Análise de métricas e insights",
+        "Estratégias de crescimento orgânico"
+      ]
     },
     {
-      icon: <Megaphone className="w-12 h-12 text-[#D4AF37]" />,
-      title: "Marketing Digital",
-      description: "Estratégias completas para impulsionar seu negócio online."
+      title: "Consultoria Estratégica",
+      icon: <CheckCircle className="h-6 w-6 text-amber-500" />,
+      description: "Análise e planejamento estratégico para impulsionar seus resultados digitais.",
+      details: "Oferecemos consultoria especializada para empresas que desejam aprimorar sua presença digital. Analisamos seu negócio, concorrência e mercado para desenvolver estratégias personalizadas que gerem resultados tangíveis.",
+      benefits: [
+        "Diagnóstico completo da presença digital",
+        "Análise de concorrência",
+        "Plano de ação detalhado",
+        "Definição de KPIs e metas",
+        "Acompanhamento de implementação"
+      ]
     }
   ];
 
@@ -212,7 +282,7 @@ function App() {
       <div className="flex flex-col items-center justify-center h-full space-y-8">
         <button 
           onClick={() => {
-            scrollToSection('services');
+            scrollToSection('servicos');
             setIsMobileMenuOpen(false);
           }}
           className="text-xl hover:text-[#D4AF37] transition-colors"
@@ -221,7 +291,7 @@ function App() {
         </button>
         <button 
           onClick={() => {
-            scrollToSection('packages');
+            scrollToSection('pacotes');
             setIsMobileMenuOpen(false);
           }}
           className="text-xl hover:text-[#D4AF37] transition-colors"
@@ -239,7 +309,7 @@ function App() {
         </button>
         <button 
           onClick={() => {
-            scrollToSection('contact');
+            scrollToSection('contato');
             setIsMobileMenuOpen(false);
           }}
           className="text-xl hover:text-[#D4AF37] transition-colors"
@@ -270,8 +340,8 @@ function App() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-8">
               <img 
-                src="/images/lif3_logo.png"
-                alt=""
+                src="https://i.imgur.com/GJkxuSS.png"
+                alt="Lif3 Digital Media"
                 className="h-12 md:h-16 transition-all duration-300 w-auto object-contain"
                 loading="eager"
               />
@@ -279,10 +349,10 @@ function App() {
             
             <div className="flex items-center gap-8">
               <div className="hidden md:flex items-center gap-8">
-                <button onClick={() => scrollToSection('services')} className="hover:text-[#D4AF37] transition-colors">Serviços</button>
-                <button onClick={() => scrollToSection('packages')} className="hover:text-[#D4AF37] transition-colors">Pacotes</button>
+                <button onClick={() => scrollToSection('servicos')} className="hover:text-[#D4AF37] transition-colors">Serviços</button>
+                <button onClick={() => scrollToSection('pacotes')} className="hover:text-[#D4AF37] transition-colors">Pacotes</button>
                 <button onClick={() => scrollToSection('indica')} className="hover:text-[#D4AF37] transition-colors">Indica+</button>
-                <button onClick={() => scrollToSection('contact')} className="hover:text-[#D4AF37] transition-colors">Contato</button>
+                <button onClick={() => scrollToSection('contato')} className="hover:text-[#D4AF37] transition-colors">Contato</button>
               </div>
               <button
                 onClick={toggleTheme}
@@ -314,7 +384,7 @@ function App() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-16">
             <button 
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection('contato')}
               className="px-8 py-4 bg-[#D4AF37] hover:bg-[#B4941F] rounded-full transition-colors text-lg font-semibold text-black"
             >
               Começar Agora
@@ -328,7 +398,7 @@ function App() {
           </div>
           <div className="flex justify-center">
             <button 
-              onClick={() => scrollToSection('services')}
+              onClick={() => scrollToSection('servicos')}
               className="animate-bounce cursor-pointer"
             >
               <ChevronDown className="w-8 h-8 text-[#D4AF37]" />
@@ -337,21 +407,45 @@ function App() {
         </div>
       </section>
 
-      <section id="services" className={`py-20 ${theme.sectionBg}`}>
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
+      <section id="servicos" className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
             Nossos Serviços
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className={`${theme.cardBg} p-8 rounded-lg border border-[#D4AF37]/20 hover:border-[#D4AF37] transition-colors group`}>
-                <div className="mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-[#D4AF37] transition-colors">{service.title}</h3>
-                <p className={theme.textMuted}>{service.description}</p>
+              <div 
+                key={index}
+                onClick={() => {
+                  setSelectedService(service);
+                  setIsModalOpen(true);
+                }}
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer transform hover:-translate-y-1 transition-transform"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="p-2 bg-amber-100 dark:bg-amber-900 rounded-full mr-4">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{service.title}</h3>
+                </div>
+                <p className="text-gray-700 dark:text-gray-300">{service.description}</p>
+                <div className="mt-4 flex justify-end">
+                  <span className="text-amber-500 font-medium flex items-center">
+                    Saiba mais <ChevronDown className="ml-1 h-4 w-4" />
+                  </span>
+                </div>
               </div>
             ))}
           </div>
         </div>
+        
+        {selectedService && (
+          <ServiceModal 
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            service={selectedService}
+          />
+        )}
       </section>
 
       <section id="indica" className={`py-20 ${theme.cardBg}`}>
@@ -377,7 +471,7 @@ function App() {
                 </p>
               </div>
               <button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection('contato')}
                 className="px-8 py-4 bg-[#D4AF37] hover:bg-[#B4941F] rounded-full transition-colors text-lg font-semibold text-black"
               >
                 Quero Indicar
@@ -387,7 +481,7 @@ function App() {
         </div>
       </section>
 
-      <section id="packages" className={`py-20 ${theme.sectionBg}`}>
+      <section id="pacotes" className={`py-20 ${theme.sectionBg}`}>
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
             Nossos Pacotes
@@ -406,7 +500,7 @@ function App() {
                   ))}
                 </ul>
                 <button 
-                  onClick={() => scrollToSection('contact')}
+                  onClick={() => scrollToSection('contato')}
                   className="w-full mt-4 px-6 py-3 bg-[#D4AF37] hover:bg-[#B4941F] rounded-full transition-colors text-black font-semibold"
                 >
                   Solicitar Proposta
@@ -417,7 +511,7 @@ function App() {
         </div>
       </section>
 
-      <section id="contact" className={`py-20 ${theme.cardBg}`}>
+      <section id="contato" className={`py-20 ${theme.cardBg}`}>
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
             Entre em Contato
