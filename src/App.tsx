@@ -422,6 +422,9 @@ function App() {
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
             Entre em Contato
+            <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto`}>
+              Conheça a nossa inteligência artificial que responde você em tempo real
+              </p>
           </h2>
           <div className="max-w-2xl mx-auto">
             <form onSubmit={handleFormSubmit} className="space-y-6">
@@ -567,7 +570,7 @@ function App() {
                 />
               </div>
               <p className={`text-lg ${theme.text} mb-2`}>
-                Excelente, agora você será atendido pela nossa IA da Lif3 no WhatsApp que vai te auxiliar no processo.
+                Excelente, agora você será atendido pela nossa IA da Lif3 no WhatsApp que vai te auxiliar no processo
               </p>
               <div className="mt-4">
                 <div className="w-8 h-8 border-4 border-[#D4AF37] border-t-transparent rounded-full animate-spin mx-auto" />
