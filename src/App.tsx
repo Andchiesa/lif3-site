@@ -153,8 +153,8 @@ function App() {
     },
     {
       icon: <BookOpen className="w-12 h-12 text-[#D4AF37]" />,
-      title: "Produção de E-books",
-      description: "Materiais educativos que estabelecem sua autoridade no mercado."
+      title: "Produção de E-books e Audiobooks",
+      description: "Criação personalizada e pronta para ser lançada."
     },
     {
       icon: <GraduationCap className="w-12 h-12 text-[#D4AF37]" />,
@@ -371,11 +371,10 @@ function App() {
               </p>
               <div className="bg-[#D4AF37]/10 p-6 rounded-lg mb-8">
                 <p className="text-2xl font-bold text-[#D4AF37]">
-                  Ganhe até 10% de bonificação
+                  Ganhe até 10% de bonificação por cada contrato fechado!
                 </p>
                 <p className={`${theme.textSecondary} mt-2`}>
-                  por cada contrato fechado!
-                  Para se cadastrar, basta preencher em entre em contato escolher Indica+ e já está participando do programa.
+                  Para se cadastrar, basta preencher o campo contato, escolher Indica+, enviar a mensagem, confirmar para o nosso whatsapp e nossa IA vai registrar sua participação no programa.
                 </p>
               </div>
               <button 
