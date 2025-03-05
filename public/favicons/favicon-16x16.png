@@ -1,0 +1,13 @@
+import favicon from './favicons/favicon-16x16.png';
+
+const faviconDataUrl = `data:image/png;base64,${favicon.src.split(',')[1]}`;
+
+// ... dentro do seu componente, provavelmente em um useEffect:
+useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/png';
+    link.sizes = '16x16';
+    link.href = faviconDataUrl;
+    document.head.appendChild(link);
+}, []);
