@@ -367,6 +367,7 @@ function App() {
               </h3>
               <p className={`text-xl ${theme.textSecondary} mb-6`}>
                 O Indica+ é o nosso programa de bonificação que recompensa você por indicar novos clientes para a nossa agência.
+               
               </p>
               <div className="bg-[#D4AF37]/10 p-6 rounded-lg mb-8">
                 <p className="text-2xl font-bold text-[#D4AF37]">
@@ -374,6 +375,7 @@ function App() {
                 </p>
                 <p className={`${theme.textSecondary} mt-2`}>
                   por cada contrato fechado!
+                  Para se cadastrar, basta preencher em entre em contato escolher Indica+ e já está participando do programa.
                 </p>
               </div>
               <button 
