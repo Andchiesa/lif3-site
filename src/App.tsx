@@ -420,11 +420,11 @@ function App() {
 
       <section id="contact" className={`py-20 ${theme.cardBg}`}>
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
+          <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
             Entre em Contato
           </h2>
           
-          <p className={`text-center mb-16 ${theme.text}`}>
+          <p className={`text-center mb-8 ${theme.text}`}>
             Conheça a nossa inteligência artificial que responde você em tempo real
           </p>
 
