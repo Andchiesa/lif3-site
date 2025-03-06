@@ -418,14 +418,16 @@ function App() {
         </div>
       </section>
 
-      <section id="contact" className={`py-20 ${theme.cardBg}`}>
+      <section id="contato" className={`py-20 ${theme.cardBg}`}>
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
             Entre em Contato
-           <p className={text-xl md:text-2xl ${theme.textSecondary} mt-6 mb-8 max-w-3xl mx-auto}>
-              Conheça a nossa inteligência artificial que responde você em tempo real
-              </p>
           </h2>
+          
+          <p className="text-center mb-16 text-white dark:text-white">
+            Conheça a nossa inteligência artificial que responde você em tempo real
+          </p>
+
           <div className="max-w-2xl mx-auto">
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <div>
