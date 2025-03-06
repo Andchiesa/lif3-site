@@ -424,7 +424,7 @@ function App() {
             Entre em Contato
           </h2>
           
-          <p className="text-center mb-16 text-white dark:text-white">
+          <p className={`text-center mb-16 ${theme.text}`}>
             Conheça a nossa inteligência artificial que responde você em tempo real
           </p>
 
