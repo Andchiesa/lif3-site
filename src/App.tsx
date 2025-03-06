@@ -551,6 +551,14 @@ function App() {
                 <Linkedin className="w-6 h-6 text-[#D4AF37]" />
               </a>
             </div>
+            
+            <a 
+              href="mailto:contato@lif3digitalmedia.com.br"
+              className={`${theme.textSecondary} hover:text-[#D4AF37] transition-colors`}
+            >
+              contato@lif3digitalmedia.com.br
+            </a>
+
             <p className={`text-center ${theme.textMuted}`}>
               © {new Date().getFullYear()} Lif3 Digital Media. Todos os direitos reservados.
             </p>
