@@ -374,7 +374,7 @@ function App() {
                   Ganhe até 10% de bonificação por cada contrato fechado!
                 </p>
                 <p className={`${theme.textSecondary} mt-2`}>
-                  Para se cadastrar, basta preencher o campo contato, escolher Indica+, enviar a mensagem, confirmar para o nosso whatsapp e nossa IA vai registrar sua participação no programa.
+                  Para se cadastrar, basta preencher o campo Entre em Contato, escolher a opção Indica+, enviar a mensagem, confirmar para o nosso whatsapp e nossa IA vai registrar sua participação no programa.
                 </p>
               </div>
               <button 
