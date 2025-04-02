@@ -91,7 +91,6 @@ function App() {
     }
   };
 
-  // Adicione esta função para limpar o formulário
   const resetForm = () => {
     setFormData({
       name: '',
@@ -105,31 +104,20 @@ function App() {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Mostra o popup
     setShowPopup(true);
     
-    // Formata a mensagem para o WhatsApp
     const message = `*Nova mensagem de contato*\n\n*Nome:* ${formData.name}\n*Telefone:* ${formData.phone}\n*E-mail:* ${formData.email}\n*Assunto:* ${formData.subject}\n*Mensagem:* ${formData.message}`;
     
-    // Codifica a mensagem para URL
     const encodedMessage = encodeURIComponent(message);
     
-    // Cria a URL do WhatsApp
     const whatsappUrl = `https://wa.me/5521986007494?text=${encodedMessage}`;
     
-    // Aguarda 7 segundos antes de redirecionar para o WhatsApp
     setTimeout(() => {
       try {
-        // Limpa o formulário primeiro
         resetForm();
-        
-        // Fecha o popup
         setShowPopup(false);
-        
-        // Tenta abrir o WhatsApp em uma nova janela
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
       } catch (error) {
-        // Se houver erro ao abrir nova janela, tenta redirecionar na mesma janela
         window.location.href = whatsappUrl;
       }
     }, 7000);
@@ -139,57 +127,57 @@ function App() {
     {
       icon: <Search className="w-12 h-12 text-[#D4AF37]" />,
       title: "SEO e Otimização",
-      description: "Apareça no topo das buscas do Google e aumente sua visibilidade online."
+      description: "Apareça no topo das buscas com nossas estratégias de SEO."
     },
     {
       icon: <Share2 className="w-12 h-12 text-[#D4AF37]" />,
-      title: "Gerenciamento de Redes Sociais",
-      description: "Estratégias personalizadas para alcançar e engajar seu público-alvo."
+      title: "Social Media",
+      description: "Gerenciamento de redes sociais para engajar seu público."
     },
     {
       icon: <PenTool className="w-12 h-12 text-[#D4AF37]" />,
       title: "Criação de Conteúdo",
-      description: "Conteúdo relevante e envolvente que converte em resultados."
+      description: "Conteúdo envolvente para Marketing Digital e conversão."
     },
     {
       icon: <BookOpen className="w-12 h-12 text-[#D4AF37]" />,
-      title: "Produção de E-books e Audiobooks",
-      description: "Criação personalizada e pronta para ser lançada."
+      title: "E-books e Audiobooks",
+      description: "Produção de e-books e audiobooks personalizados."
     },
     {
       icon: <GraduationCap className="w-12 h-12 text-[#D4AF37]" />,
       title: "Cursos Online",
-      description: "Transforme seu conhecimento em produtos digitais lucrativos."
+      description: "Transforme conhecimento em cursos online lucrativos."
     },
     {
       icon: <Megaphone className="w-12 h-12 text-[#D4AF37]" />,
-      title: "Marketing Digital",
-      description: "Estratégias completas para impulsionar seu negócio online."
+      title: "Propaganda Comerciais",
+      description: "Campanhas de Marketing Digital e comerciais impactantes."
     }
   ];
 
   const packages = [
     {
       title: "Pacote Visibilidade Online",
-      description: "Ideal para quem quer ser encontrado e aumentar sua presença online.",
+      description: "Ideal para quem quer ser encontrado com SEO e Social Media.",
       features: [
         "SEO e Otimização de Negócios",
-        "Gerenciamento de Redes Sociais",
+        "Gerenciamento de Social Media",
         "Relatórios mensais de performance"
       ]
     },
     {
       title: "Pacote Conteúdo Magnético",
-      description: "Perfeito para quem precisa de conteúdo de qualidade para atrair e engajar.",
+      description: "Criação de Conteúdo e Social Media para atrair clientes.",
       features: [
         "Criação de Conteúdo (texto, imagens, vídeos)",
-        "Gerenciamento de Redes Sociais",
+        "Gerenciamento de Social Media",
         "Estratégia de distribuição de conteúdo"
       ]
     },
     {
       title: "Pacote Autoridade Digital",
-      description: "Para quem quer se posicionar como especialista no mercado.",
+      description: "E-books, Audiobooks e Cursos Online para se destacar.",
       features: [
         "Criação de E-books e Audiobooks",
         "Produção de Cursos Online",
@@ -198,10 +186,10 @@ function App() {
     },
     {
       title: "Pacote Personalizado",
-      description: "Monte o pacote ideal para o seu negócio.",
+      description: "Monte seu plano com Propaganda Comerciais e IA.",
       features: [
-        "Escolha os serviços necessários",
-        "Flexibilidade de investimento",
+        "Propaganda Comerciais sob medida",
+        "Soluções com Inteligência Artificial",
         "Atendimento personalizado"
       ]
     }
@@ -271,7 +259,7 @@ function App() {
             <div className="flex items-center gap-8">
               <img 
                 src="/images/lif3_logo.png"
-                alt=""
+                alt="Lif3 Digital Media - Marketing Digital e SEO"
                 className="h-12 md:h-16 transition-all duration-300 w-auto object-contain"
                 loading="eager"
               />
@@ -306,11 +294,11 @@ function App() {
         <div className="container mx-auto px-6 text-center relative z-10 py-16">
           <div className="mb-8">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-relaxed tracking-tight bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text pb-4">
-              Transformando Ideias em<br className="md:hidden" /> Realidade Digital
+              Marketing Digital e Inteligência Artificial<br className="md:hidden" /> para Sua Realidade Digital
             </h1>
           </div>
           <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto`}>
-            Criamos experiências digitais inovadoras que elevam marcas e impulsionam o sucesso
+            Soluções em SEO, Social Media, Criação de Conteúdo, Propaganda Comerciais, E-books, Audiobooks e Cursos Online
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-16">
             <button 
@@ -340,7 +328,7 @@ function App() {
       <section id="services" className={`py-20 ${theme.sectionBg}`}>
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
-            Nossos Serviços
+            Nossos Serviços de Marketing Digital
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -366,18 +354,14 @@ function App() {
                 Programa de Bonificação
               </h3>
               <p className={`text-xl ${theme.textSecondary} mb-6`}>
-                O Indica+ é o nosso programa de bonificação que recompensa você por indicar novos clientes para a nossa agência.
-               
+                Indique nossos serviços de Marketing Digital, SEO e Inteligência Artificial e ganhe recompensas.
               </p>
               <div className="bg-[#D4AF37]/10 p-6 rounded-lg mb-8">
                 <p className="text-2xl font-bold text-[#D4AF37]">
                   Ganhe até 10% de bonificação por cada contrato fechado!
                 </p>
                 <p className={`${theme.textSecondary} mt-2`}>
-                  Para se cadastrar, basta preencher o campo Entre em Contato, escolher o assunto Indica+, enviar 
-                </p>
-                 <p className={`${theme.textSecondary} mt-2`}>
-                  a mensagem, confirmar para o nosso whatsapp e nossa IA vai registrar sua participação no programa. 
+                  Cadastre-se no Indica+ e aproveite nossas soluções em Cursos Online e Propaganda Comerciais.
                 </p>
               </div>
               <button 
@@ -394,7 +378,7 @@ function App() {
       <section id="packages" className={`py-20 ${theme.sectionBg}`}>
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
-            Nossos Pacotes
+            Pacotes com Inteligência Artificial
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {packages.map((pkg, index) => (
@@ -426,11 +410,9 @@ function App() {
           <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
             Entre em Contato
           </h2>
-          
           <p className={`text-center mb-8 ${theme.text}`}>
-            Conheça a nossa inteligência artificial que responde você em tempo real
+            Fale com nossa Inteligência Artificial sobre Marketing Digital e SEO
           </p>
-
           <div className="max-w-2xl mx-auto">
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <div>
@@ -446,7 +428,6 @@ function App() {
                   required
                 />
               </div>
-              
               <div>
                 <label htmlFor="phone" className={`block text-sm font-medium ${theme.textSecondary} mb-2`}>
                   Telefone / WhatsApp
@@ -459,15 +440,12 @@ function App() {
                     const formatted = formatPhone(e.target.value);
                     setFormData({...formData, phone: formatted});
                   }}
-                  className={`w-full px-4 py-3 ${theme.inputBg} border border-[#D4AF37]/20 rounded-lg 
-                    focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 focus:outline-none 
-                    ${theme.text} ${validatePhone(formData.phone) ? 'border-green-500' : ''}`}
+                  className={`w-full px-4 py-3 ${theme.inputBg} border border-[#D4AF37]/20 rounded-lg focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 focus:outline-none ${theme.text} ${validatePhone(formData.phone) ? 'border-green-500' : ''}`}
                   required
                   aria-label="Telefone ou WhatsApp"
                   pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
                 />
               </div>
-
               <div>
                 <label htmlFor="email" className={`block text-sm font-medium ${theme.textSecondary} mb-2`}>
                   E-mail
@@ -481,7 +459,6 @@ function App() {
                   required
                 />
               </div>
-
               <div>
                 <label htmlFor="subject" className={`block text-sm font-medium ${theme.textSecondary} mb-2`}>
                   Assunto
@@ -499,7 +476,6 @@ function App() {
                   <option value="Outros">Outros</option>
                 </select>
               </div>
-
               <div>
                 <label htmlFor="message" className={`block text-sm font-medium ${theme.textSecondary} mb-2`}>
                   Mensagem
@@ -513,7 +489,6 @@ function App() {
                   required
                 ></textarea>
               </div>
-
               <button
                 type="submit"
                 className="w-full px-8 py-4 bg-[#D4AF37] hover:bg-[#B4941F] rounded-full transition-colors text-lg font-semibold text-black"
@@ -554,22 +529,19 @@ function App() {
                 <Linkedin className="w-6 h-6 text-[#D4AF37]" />
               </a>
             </div>
-            
             <a 
               href="mailto:contato@lif3digitalmedia.com.br"
               className={`${theme.textSecondary} hover:text-[#D4AF37] transition-colors`}
             >
               contato@lif3digitalmedia.com.br
             </a>
-
             <p className={`text-center ${theme.textMuted}`}>
-              © {new Date().getFullYear()} Lif3 Digital Media. Todos os direitos reservados.
+              © {new Date().getFullYear()} Lif3 Digital Media - Marketing Digital, SEO e Inteligência Artificial. Todos os direitos reservados.
             </p>
           </div>
         </div>
       </footer>
 
-      {/* Popup */}
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
@@ -578,12 +550,12 @@ function App() {
               <div className="mb-4">
                 <img 
                   src="/images/lif3_logo.png"
-                  alt=""
+                  alt="Lif3 Digital Media - Soluções em Marketing Digital"
                   className="h-16 mx-auto"
                 />
               </div>
               <p className={`text-lg ${theme.text} mb-2`}>
-                Excelente, agora você será atendido pela nossa IA da Lif3 no WhatsApp que vai te auxiliar no processo
+                Nossa Inteligência Artificial vai te ajudar com Marketing Digital e Cursos Online no WhatsApp!
               </p>
               <div className="mt-4">
                 <div className="w-8 h-8 border-4 border-[#D4AF37] border-t-transparent rounded-full animate-spin mx-auto" />
