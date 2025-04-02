@@ -151,8 +151,8 @@ function App() {
     },
     {
       icon: <Megaphone className="w-12 h-12 text-[#D4AF37]" />,
-      title: "Propaganda Comerciais",
-      description: "Campanhas de Marketing Digital e comerciais impactantes."
+      title: "Propaganda e Comerciais",
+      description: "Criação de propagandas e comerciais impactantes para divulgação."
     }
   ];
 
@@ -361,7 +361,7 @@ function App() {
                   Ganhe até 10% de bonificação por cada contrato fechado!
                 </p>
                 <p className={`${theme.textSecondary} mt-2`}>
-                  Cadastre-se no Indica+ e aproveite nossas soluções em Cursos Online e Propaganda Comerciais.
+                  Cadastre-se no Indica+ é só selecionar o assunto Indica+ e enviar sua mensagem para ser direcionado para nossa IA.
                 </p>
               </div>
               <button 
