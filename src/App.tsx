@@ -354,7 +354,9 @@ function App() {
                 Programa de Bonificação
               </h3>
               <p className={`text-xl ${theme.textSecondary} mb-6`}>
-                Indique nossos serviços de Marketing Digital, SEO e Inteligência Artificial e ganhe recompensas.
+                Indique nossos serviços de Marketing Digital, SEO 
+                </p>
+              <p e Inteligência Artificial e ganhe recompensas.
               </p>
               <div className="bg-[#D4AF37]/10 p-6 rounded-lg mb-8">
                 <p className="text-2xl font-bold text-[#D4AF37]">
