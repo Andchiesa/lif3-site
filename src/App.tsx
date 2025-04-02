@@ -363,8 +363,7 @@ function App() {
                   Ganhe até 10% de bonificação por cada contrato fechado!
                 </p>
                 <p className={`${theme.textSecondary} mt-2`}>
-                  Para se cadastrar, basta selecionar o assunto Indica+ </p>
-                  <p>e enviar sua mensagem para ser direcionado para nossa IA.
+                  Para se cadastrar, basta selecionar o assunto Indica+ e enviar sua mensagem para ser direcionado para nossa IA.
                 </p>
               </div>
               <button 
