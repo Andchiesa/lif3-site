@@ -294,11 +294,11 @@ function App() {
         <div className="container mx-auto px-6 text-center relative z-10 py-16">
           <div className="mb-8">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-relaxed tracking-tight bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text pb-4">
-              Marketing Digital e Inteligência Artificial<br className="md:hidden" /> para Sua Realidade Digital
+              Marketing, Mídia e Inteligência Artificial<br className="md:hidden" /> para Sua Realidade Digital
             </h1>
           </div>
           <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto`}>
-            Soluções em SEO, Social Media, Criação de Conteúdo, Propaganda Comerciais, E-books, Audiobooks e Cursos Online
+            Soluções em SEO, Social Media, Criação de Conteúdo, Propaganda, Comerciais, E-books, Audiobooks e Cursos Online
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-16">
             <button 
