@@ -361,7 +361,7 @@ function App() {
                   Ganhe até 10% de bonificação por cada contrato fechado!
                 </p>
                 <p className={`${theme.textSecondary} mt-2`}>
-                  Para se cadastrar, basta selecionar o assunto Indica+ e enviar sua mensagem para ser direcionado para nossa IA.
+                  Para se cadastrar, basta selecionar o assunto Indica+ <br className="md:hidden" /> e enviar sua mensagem para ser direcionado para nossa IA.
                 </p>
               </div>
               <button 
@@ -411,7 +411,7 @@ function App() {
             Entre em Contato
           </h2>
           <p className={`text-center mb-8 ${theme.text}`}>
-            Fale com nossa Inteligência Artificial sobre o que você precisa:
+            Fale com nossa Inteligência Artificial sobre o que você precisa
           </p>
           <div className="max-w-2xl mx-auto">
             <form onSubmit={handleFormSubmit} className="space-y-6">
