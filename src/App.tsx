@@ -536,7 +536,7 @@ function App() {
               contato@lif3digitalmedia.com.br
             </a>
             <p className={`text-center ${theme.textMuted}`}>
-              © {new Date().getFullYear()} Lif3 Digital Media - Marketing Digital, SEO e Inteligência Artificial. Todos os direitos reservados.
+              © {new Date().getFullYear()} Lif3 Digital Media - Marketing, Mídia, SEO e Inteligência Artificial. Todos os direitos reservados.
             </p>
           </div>
         </div>
