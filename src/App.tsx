@@ -411,7 +411,7 @@ function App() {
             Entre em Contato
           </h2>
           <p className={`text-center mb-8 ${theme.text}`}>
-            Fale com nossa Inteligência Artificial sobre Marketing Digital e SEO
+            Fale com nossa Inteligência Artificial sobre o que você precisa:
           </p>
           <div className="max-w-2xl mx-auto">
             <form onSubmit={handleFormSubmit} className="space-y-6">
