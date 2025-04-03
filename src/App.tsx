@@ -378,7 +378,7 @@ function App() {
       <section id="packages" className={`py-20 ${theme.sectionBg}`}>
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
-            Pacotes com Inteligência Artificial
+            Nossos Pacotes
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {packages.map((pkg, index) => (
