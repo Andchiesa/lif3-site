@@ -294,7 +294,7 @@ function App() {
         <div className="container mx-auto px-6 text-center relative z-10 py-16">
           <div className="mb-8">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-relaxed tracking-tight bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text pb-4">
-              Marketing, Mídia e Inteligência Artificial<br className="md:hidden" /> para Sua Realidade Digital
+              Transforme suas ideias em<br className="md:hidden" />Realidade Digital
             </h1>
           </div>
           <p className={`text-xl md:text-2xl ${theme.textSecondary} mb-12 max-w-3xl mx-auto`}>
