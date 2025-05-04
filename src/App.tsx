@@ -330,8 +330,8 @@ function App() {
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
             Nossos Serviços
           </h2>
-          <p className={`text-center mb-8 ${theme.text}`}>
-           Aui estão alguns dos nossos principais serviços
+          <p className={`text-center mb-4 ${theme.text}`}>
+           Aqui estão alguns dos nossos principais serviços
           </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -383,8 +383,8 @@ function App() {
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
             Nossos Pacotes
           </h2>
-          <p className={`text-center mb-8 ${theme.text}`}>
-            Escolha um dos nossos pacotes ou monte o seu personalizado
+          <p className={`text-center mb-4 ${theme.text}`}>
+            Escolha um dos nossos pacotes ou monte um personalizado para você
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {packages.map((pkg, index) => (
