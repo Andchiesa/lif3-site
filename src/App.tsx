@@ -330,7 +330,7 @@ function App() {
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
             Nossos Serviços
           </h2>
-          <p className={`text-center mb-6 ${theme.text}`}>
+          <p className={`text-center mb-10 ${theme.text}`}>
            Aqui estão alguns dos nossos principais serviços
           </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -383,7 +383,7 @@ function App() {
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
             Nossos Pacotes
           </h2>
-          <p className={`text-center mb-6 ${theme.text}`}>
+          <p className={`text-center mb-10 ${theme.text}`}>
             Escolha um dos nossos pacotes ou monte um personalizado para você
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -561,7 +561,7 @@ function App() {
                 />
               </div>
               <p className={`text-lg ${theme.text} mb-2`}>
-                Nossa Inteligência Artificial vai te ajudar. Basta enviar a mensagem e informar o que você precisa para nossa IA.
+                Nossa Inteligência Artificial vai te ajudar. Basta Enviar a Mensagem, permitir o envio para o WhatsApp e falar com nossa IA.
               </p>
               <div className="mt-4">
                 <div className="w-8 h-8 border-4 border-[#D4AF37] border-t-transparent rounded-full animate-spin mx-auto" />
