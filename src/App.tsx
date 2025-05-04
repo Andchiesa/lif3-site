@@ -330,7 +330,10 @@ function App() {
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
             Nossos Serviços
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <p className={`text-center mb-8 ${theme.text}`}>
+           Aui estão alguns dos nossos principais serviços
+          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={index} className={`${theme.cardBg} p-8 rounded-lg border border-[#D4AF37]/20 hover:border-[#D4AF37] transition-colors group`}>
                 <div className="mb-4">{service.icon}</div>
@@ -380,6 +383,9 @@ function App() {
           <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-transparent bg-clip-text">
             Nossos Pacotes
           </h2>
+          <p className={`text-center mb-8 ${theme.text}`}>
+            Escolha um dos nossos pacotes ou monte o seu personalizado
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {packages.map((pkg, index) => (
               <div key={index} className={`${theme.cardBg} p-8 rounded-lg border border-[#D4AF37]/20 hover:border-[#D4AF37] transition-colors group`}>
