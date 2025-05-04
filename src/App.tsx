@@ -555,7 +555,7 @@ function App() {
                 />
               </div>
               <p className={`text-lg ${theme.text} mb-2`}>
-                Nossa Inteligência Artificial vai te ajudar com Marketing Digital e Cursos Online no WhatsApp!
+                Nossa Inteligência Artificial vai te ajudar. Basta enviar a mensagem e informar o que você precisa para nossa IA.
               </p>
               <div className="mt-4">
                 <div className="w-8 h-8 border-4 border-[#D4AF37] border-t-transparent rounded-full animate-spin mx-auto" />
